@@ -1,6 +1,6 @@
 class Grid
-  def initialize(width,length)
-    @grid = Array.new(width) { Array.new (length) }
+  def initialize(width, length)
+    @grid = Array.new(width) { Array.new length }
   end
 
   def show
