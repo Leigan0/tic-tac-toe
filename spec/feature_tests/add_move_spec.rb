@@ -21,4 +21,14 @@ describe 'adds move' do
     game.new_game
     expect { game.add_move(4,4) }.to raise_error { 'Outside Grid' }
   end
+  it 'will not change player turn if selected space not available to select'  do
+    game.new_game
+    expect(game.turn).to eq 'X'
+    expect { game.add_move(4,4) }.to raise_error { 'Outside Grid' }
+    expect(game.turn).to eq 'X'
+    game.add_move(0,2)
+    expect(game.turn).to eq 'O'
+    expect { game.add_move(0,2) }.to raise_error { 'Already taken' }
+    expect(game.turn).to eq 'O'
+  end
 end

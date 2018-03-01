@@ -26,7 +26,7 @@ class Game
   end
 
   def switch_turn
-    @turn = 'O'
+    @turn == 'X' ? @turn = 'O' : @turn = 'X'
   end
 
 end
