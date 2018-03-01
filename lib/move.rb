@@ -12,7 +12,7 @@ class Move
 
   private
 
-    def validate!
-      fail 'not a valid move' unless @x.is_a?(Integer) && @y.is_a?(Integer)
-    end
+  def validate!
+    fail 'not a valid move' unless @x.is_a?(Integer) && @y.is_a?(Integer)
+  end
 end

@@ -9,8 +9,7 @@ class Grid
 
   def update_field(move)
     @move = move
-    fail 'Outside Grid' unless within_grid
-    fail 'Already taken' unless field_empty
+    validate_move
     @grid[move[:y]][move[:x]] = move[:turn]
   end
 
@@ -21,6 +20,11 @@ class Grid
   private
   attr_reader :move
   attr_reader :grid
+
+  def validate_move
+    fail 'Outside Grid' unless within_grid
+    fail 'Already taken' unless field_empty
+  end
 
   def within_grid
     move[:y] < grid.length && move[:x] < grid[0].length
