@@ -1,7 +1,38 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/leigh-anngant/Projects/makers_onsite/week_9/tic-tac-toe/spec/move_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        1,
+        2,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/leigh-anngant/Projects/makers_onsite/week_9/tic-tac-toe/lib/move.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ]
     },
-    "timestamp": 1519903278
+    "timestamp": 1519904970
   }
 }
