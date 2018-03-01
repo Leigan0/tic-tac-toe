@@ -25,6 +25,11 @@ class Game
     @turn
   end
 
+  ## should turn be its own class?
+  ## rules be its own class?
+
+  private
+
   def switch_turn
     @turn == 'X' ? @turn = 'O' : @turn = 'X'
   end
