@@ -6,6 +6,6 @@ class Move
   end
 
   def to_h
-    {x: @x, y: @y, turn: @turn}
+    { x: @x, y: @y, turn: @turn }
   end
 end

@@ -10,7 +10,7 @@ describe Move do
   describe '#to_h' do
     it 'returns move attributes as hash' do
       move = Move.new(0, 0, 'X')
-      expect(move.to_h).to eq turn = { :turn => "X",:x => 0,:y => 0}
+      expect(move.to_h).to eq turn = { :turn => "X", :x => 0, :y => 0 }
     end
   end
 end
