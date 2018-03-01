@@ -3,7 +3,7 @@ require 'game'
 describe Game do
   let(:move) { double :move, to_h: nil }
   let(:move_class) { double :move_class, new: move }
-  let(:grid) { double :grid, update_field: nil , full?: false}
+  let(:grid) { double :grid, update_field: nil, full?: false }
   let(:grid_class) { double :grid_class, new: grid }
   let(:game) { described_class.new(grid_class, move_class) }
 
@@ -30,8 +30,8 @@ describe Game do
     end
     it 'will not add another move if grid is full' do
       fill_game
-      allow(grid).to receive(:full?).and_return(:true)
-      expect { game.add_move(2, 2) }.to raise_error { 'Game over' }
+      allow(grid).to receive(:full?).and_return(true)
+      expect { game.add_move(2, 2) }.to raise_error 'Game over'
     end
   end
 end
