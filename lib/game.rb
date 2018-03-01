@@ -18,7 +18,7 @@ class Game
   def add_move(x, y)
     @move = @move_class.new(x, y, current_turn)
     @grid.update_field(@move.to_h)
-    switch_turn
+    update_turn
   end
 
   def current_turn
@@ -30,7 +30,8 @@ class Game
 
   private
 
-  def switch_turn
+  def update_turn
+    fail 'Game over' if @grid.full?
     @turn == 'X' ? @turn = 'O' : @turn = 'X'
   end
 

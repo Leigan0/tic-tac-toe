@@ -14,7 +14,7 @@ describe 'adds move' do
     game.add_move(0, 1)
     expect(game.grid.show).to eq [['X', nil, nil], ['O', nil, nil], [nil, nil, nil]]
   end
-  it 'will not add move if intergers are not given as x & y arguments' do
+  it 'will not add move if integers are not given as x & y arguments' do
     expect { game.add_move('X', 'Y') }.to raise_error { 'not a valid move' }
     expect(game.grid.show).to eq [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]]
   end

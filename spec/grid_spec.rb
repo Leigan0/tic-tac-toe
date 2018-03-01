@@ -43,7 +43,6 @@ describe Grid do
     grid.update_field({ :turn => "2", :x => 1, :y => 0 })
     grid.update_field({ :turn => "3", :x => 0, :y => 1 })
     grid.update_field({ :turn => "4", :x => 1, :y => 1 })
-    grid.show
     expect(grid).to be_full
   end
 
