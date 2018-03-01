@@ -9,6 +9,10 @@ Prior to starting the challenge I have designed a DOM that I think is required:
 * *Grid* - size attributes - return the grid, confirm if position taken, confirm moves in a row
 * *Game* - create new grid - build moves - Game over?  
 
+## Feedback points
+* I have worked to try ensure I test behaviour and not state
+* I have also tried to have a focus on ensuring classes meet open/closed principle
+
 
 ## The challenge
 Try our Tic Tac Toe Tech Test!
