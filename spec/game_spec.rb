@@ -20,7 +20,7 @@ describe Game do
     it 'creates a new move object' do
       expect(move_class).to have_received(:new).with(0, 1, 'X')
     end
-    it 'changes current player after successful move' do
+    it 'changes current turn after successful move' do
       game.add_move(0, 0)
       expect(move_class).to have_received(:new).with(0, 1, 'X')
       expect(move_class).to have_received(:new).with(0, 0, 'O')

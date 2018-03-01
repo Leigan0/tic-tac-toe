@@ -14,6 +14,10 @@ class Grid
     @grid[move[:y]][move[:x]] = move[:turn]
   end
 
+  def full?
+    !grid.flatten.include?(nil)
+  end
+
   private
   attr_reader :move
   attr_reader :grid
