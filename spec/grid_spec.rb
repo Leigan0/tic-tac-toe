@@ -70,19 +70,41 @@ describe Grid do
     expect(grid).not_to be_full
   end
 
-  describe '#repeating_pattern(num)' do
+  describe '#repeating_pattern' do
     let(:grid) { described_class.new(3, 3) }
-    it 'can confirm true if repeating pattern in first row horizontal' do
-      three_in_row_horizontal(0)
-      expect(grid.repeating_pattern(3)).to eq true
+    context 'repeating horizontal pattern' do
+      it 'can confirm true if repeating pattern in first row horizontal' do
+        three_in_row_horizontal(0)
+        expect(grid.repeating_pattern).to eq true
+      end
+      it 'can confirm true if repeating pattern in second row horizontal' do
+        three_in_row_horizontal(1)
+        expect(grid.repeating_pattern).to eq true
+      end
+      it 'can confirm true if repeating pattern in second row horizontal' do
+        three_in_row_horizontal(1)
+        expect(grid.repeating_pattern).to eq true
+      end
+      it 'can confirm true if repeating pattern if multiple other fields in grid' do
+        three_in_row_horizontal(0)
+        grid.update_field({ :turn => "O", :x => 2, :y => 1 })
+        grid.update_field({ :turn => "O", :x => 2, :y => 2 })
+        expect(grid.repeating_pattern).to eq true
+      end
     end
-    it 'can confirm true if repeating pattern in second row horizontal' do
-      three_in_row_horizontal(1)
-      expect(grid.repeating_pattern(3)).to eq true
-    end
-    it 'can confirm true if repeating pattern in second row horizontal' do
-      three_in_row_horizontal(1)
-      expect(grid.repeating_pattern(3)).to eq true
+    context 'repeating vertical pattern' do
+      it 'can confirm true if repeating pattern in first row vertical' do
+        three_in_row_vertical(0)
+        expect(grid.repeating_pattern).to eq true
+      end
+      it 'can confirm true if repeating pattern in second row vertical' do
+        three_in_row_vertical(1)
+        expect(grid.repeating_pattern).to eq true
+      end
+      it 'can confirm true if repeating pattern in second row vertical' do
+        three_in_row_vertical(2)
+        expect(grid.repeating_pattern).to eq true
+      end
     end
   end
 

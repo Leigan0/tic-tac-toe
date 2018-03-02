@@ -16,4 +16,12 @@ describe 'game over' do
                                   ['O', 'X', 'O'],
                                   ['X', 'O', 'X']]
   end
+
+  it 'ends game when all spaces in grid are full' do
+    fill_game
+    expect { game.add_move(2, 2) }.to raise_error 'Game over'
+    expect(game.grid.show).to eq [['X', 'O', 'X'],
+                                  ['O', 'X', 'O'],
+                                  ['X', 'O', 'X']]
+  end
 end

@@ -25,7 +25,6 @@ class Game
     @turn
   end
 
-
   ## should turn be its own class?
   ## rules be its own class?
 

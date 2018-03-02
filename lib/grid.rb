@@ -17,8 +17,15 @@ class Grid
     !grid.flatten.include?(nil)
   end
 
-  def repeating_pattern(num)
+  def repeating_pattern
+    # horizontal row
     grid.each do |row|
+      unless row.include?(nil)
+        return row.uniq.length == 1
+      end
+    end
+    # vertical row
+    grid.transpose.each do |row|
       unless row.include?(nil)
         return row.uniq.length == 1
       end
