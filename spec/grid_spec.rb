@@ -53,7 +53,7 @@ describe Grid do
                                     :y => 2 })
         }.to raise_error 'Already taken'
       end
-    end 
+    end
   end
 
   it 'knows when grid has no more nil entries' do
@@ -68,6 +68,22 @@ describe Grid do
   it 'knows when grid has nil entries' do
     grid = Grid.new(2, 2)
     expect(grid).not_to be_full
+  end
+
+  describe '#repeating_pattern(num)' do
+    let(:grid) { described_class.new(3, 3) }
+    it 'can confirm true if repeating pattern in first row horizontal' do
+      three_in_row_horizontal(0)
+      expect(grid.repeating_pattern(3)).to eq true
+    end
+    it 'can confirm true if repeating pattern in second row horizontal' do
+      three_in_row_horizontal(1)
+      expect(grid.repeating_pattern(3)).to eq true
+    end
+    it 'can confirm true if repeating pattern in second row horizontal' do
+      three_in_row_horizontal(1)
+      expect(grid.repeating_pattern(3)).to eq true
+    end
   end
 
 end

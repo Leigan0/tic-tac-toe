@@ -17,6 +17,14 @@ class Grid
     !grid.flatten.include?(nil)
   end
 
+  def repeating_pattern(num)
+    grid.each do |row|
+      unless row.include?(nil)
+        return row.uniq.length == 1
+      end
+    end
+  end
+
   private
   attr_reader :coordinates
   attr_reader :grid
