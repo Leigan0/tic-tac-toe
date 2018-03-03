@@ -1,5 +1,7 @@
 class Grid
-  def initialize(width, length)
+  def initialize(w, l)
+    @width = w
+    @length = l
     @grid = Array.new(width) { Array.new length }
   end
 
@@ -18,23 +20,41 @@ class Grid
   end
 
   def repeating_pattern
-    # horizontal row
-    grid.each do |row|
-      unless row.include?(nil)
-        return row.uniq.length == 1
-      end
-    end
-    # vertical row
-    grid.transpose.each do |row|
-      unless row.include?(nil)
-        return row.uniq.length == 1
-      end
-    end
+    diagnonal_right || vertical_rows || horizontal_rows || diagonal_left
   end
 
   private
   attr_reader :coordinates
   attr_reader :grid
+  attr_reader :width
+  attr_reader :length
+
+  def diagonal_left
+    repeating_patterns([(0..(length-1)).collect { |ind| grid[ind][ind] }])
+  end
+
+  def diagnonal_right
+    i = length
+    repeating_patterns([grid.map { |row| row[i-=1] }])
+  end
+
+  def repeating_patterns(rows)
+    pattern = false
+    rows.each do |row|
+      unless row.include?(nil)
+        pattern = true if row.uniq.length == 1
+      end
+    end
+    pattern
+  end
+
+  def vertical_rows
+    repeating_patterns(grid.transpose.each { |row| })
+  end
+
+  def horizontal_rows
+    repeating_patterns(grid.each { |row| })
+  end
 
   def validate_field
     fail 'Outside Grid' unless within_grid
@@ -42,7 +62,7 @@ class Grid
   end
 
   def within_grid
-    coordinates[:y] < grid.length && coordinates[:x] < grid[0].length
+    coordinates[:y] < length && coordinates[:x] < width
   end
 
   def field_empty
