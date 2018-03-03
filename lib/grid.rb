@@ -20,7 +20,7 @@ class Grid
   end
 
   def repeating_pattern
-    diagnonal_right || vertical_rows || horizontal_rows || diagonal_left
+    diagonal_right || vertical_rows || horizontal_rows || diagonal_left
   end
 
   private
@@ -33,7 +33,7 @@ class Grid
     repeating_patterns([(0..(length - 1)).collect { |ind| grid[ind][ind] }])
   end
 
-  def diagnonal_right
+  def diagonal_right
     i = length
     repeating_patterns([grid.map { |row| row[i -= 1] }])
   end

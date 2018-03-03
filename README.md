@@ -11,7 +11,13 @@ Prior to starting the challenge I have designed a DOM that I think is required:
 * *Grid* - size attributes - return the grid, confirm if position taken, confirm if row is made up of same entry
 * *Game* - create new grid - build moves - Game over?  
 
+I have chosen to store the grid as a 2d array as this seemed like a reasonable representation of a grid, and would allow co-ordinates to be given to place the 'O''s and 'Xs'. Also allows easy modification and set up, with arguments passed as a parameter.
+
+I have decided not to use a player class as at the moment it is not necessary, and given my implementation it would have not required any behaviour, just attribute storage, which at the moment is the responsibility of move.
+
 I have attempted to design the game to be extendable with as little modification as possible. With this in mind I have not set grid size, or set pattern number, for example not three in a row, but whole row. This has potentially led me to a more complex codebase, but given more time I would work on making the code more efficient.
+
+I have aimed to add validation to ensure the game runs to specification given. I have aimed to group this as responsibility of each class. I have also tried to reduce the need for manual input as much as possible, for example 'X' and 'O' for each turn to reduce the risk of undesired behavior or input. 
 
 I have considered that the pattern could be a further class, as it could be argued that grid would not be responsible for knowing what pattern to search for. However, given the scope of the specification at the moment I think it is reasonable to have this as a responsibility of grid class. Given more time, I would potentially take this role out of the grid class.
 
