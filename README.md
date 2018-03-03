@@ -1,4 +1,6 @@
-# My Approach
+# Tic-tac-toe
+
+## My Approach
 
 I have been given the challenge to create the business logic for a tic-tac-toe game as below. I have chosen to complete the challenge in Ruby, and use Rspec testing framework. I have chosen Ruby as I have the most experience with it.
 
@@ -6,10 +8,36 @@ Prior to starting the challenge I have designed a DOM that I think is required:
 
 **3 classes **
 * *Move* - position attribute, X,O attribute
-* *Grid* - size attributes - return the grid, confirm if position taken, confirm moves in a row
+* *Grid* - size attributes - return the grid, confirm if position taken, confirm if row is made up of same entry
 * *Game* - create new grid - build moves - Game over?  
 
-I have attempted to design the game to be extendable with as little modification as possible. With this in mind I have not set grid size, or set pattern number, for example not three in a row, but whole row. This has potentially led me to a more complex solution, but given more time I would work on making the code more efficient. s
+I have attempted to design the game to be extendable with as little modification as possible. With this in mind I have not set grid size, or set pattern number, for example not three in a row, but whole row. This has potentially led me to a more complex codebase, but given more time I would work on making the code more efficient.
+
+I have considered that the pattern could be a further class, as it could be argued that grid would not be responsible for knowing what pattern to search for. However, given the scope of the specification at the moment I think it is reasonable to have this as a responsibility of grid class. Given more time, I would potentially take this role out of the grid class.
+
+I have included both unit tests and feature tests. Unit tests have focused on individual classes and use doubles / mocks to stub out any dependencies.
+
+To ensure the classes work together with the desired behaviour I have also included feature tests. The tests have provided 100% coverage, and I have aimed to cover all possible outcomes and edge cases with the test framework.
+
+## Usage
+
+### Getting started
+* Clone the repo
+* cd tic-tac-toe
+* run bundle
+* To run tests run rspec
+
+### To play the game
+* Open IRB
+* load './lib/game'
+* To create a new game - game = Game.new
+* To create a new grid = game.new_game
+* Then add each move in sequence, the game will automatically change turns as required
+* To add move - game.add_move(0,0) - The first argument will be the x position, the second the y position within the grid
+* The command to show the grid - game.grid.show
+* Once a move is made which ends a game - error "Game over" will be displayed
+* Once game over is displayed - no more moves can be added
+* To play again, game.new_game will reset the grid
 
 ## Feedback points
 * I have worked to try ensure I test behaviour and not state
