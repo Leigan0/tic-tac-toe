@@ -9,6 +9,8 @@ Prior to starting the challenge I have designed a DOM that I think is required:
 * *Grid* - size attributes - return the grid, confirm if position taken, confirm moves in a row
 * *Game* - create new grid - build moves - Game over?  
 
+I have attempted to design the game to be extendable with as little modification as possible. With this in mind I have not set grid size, or set pattern number, for example not three in a row, but whole row. This has potentially led me to a more complex solution, but given more time I would work on making the code more efficient. s
+
 ## Feedback points
 * I have worked to try ensure I test behaviour and not state
 * I have also tried to have a focus on ensuring classes meet open/closed principle

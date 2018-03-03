@@ -25,13 +25,17 @@ class Game
     @turn
   end
 
+  def gameover?
+    @grid.repeating_pattern || @grid.full?
+  end
+
   ## should turn be its own class?
   ## rules be its own class?
 
   private
 
   def update_turn
-    fail 'Game over' if @grid.full?
+    fail 'Game over' if gameover?
     @turn == 'X' ? @turn = 'O' : @turn = 'X'
   end
 
