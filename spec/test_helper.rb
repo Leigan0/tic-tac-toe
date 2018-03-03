@@ -5,7 +5,6 @@ def fill_game
   game.add_move(1, 0)
   game.add_move(1, 2)
   game.add_move(1, 1)
-  p grid
   game.add_move(2, 0)
   game.add_move(2, 2)
 end
@@ -13,9 +12,9 @@ end
 def three_in_a_row_h
   game.add_move(0, 0)
   game.add_move(2, 1)
-  game.add_move(1,0)
+  game.add_move(1, 0)
   game.add_move(1, 1)
-  game.add_move(2,0)
+  game.add_move(2, 0)
 end
 
 def three_in_row_v
@@ -55,13 +54,13 @@ def three_in_row_horizontal(num)
 end
 
 def three_in_row_diagonal_left
-    grid.update_field({ :turn => "X", :x => 2, :y => 2 })
-    grid.update_field({ :turn => "X", :x => 1, :y => 1 })
-    grid.update_field({ :turn => "X", :x => 0, :y => 0 })
+  grid.update_field({ :turn => "X", :x => 2, :y => 2 })
+  grid.update_field({ :turn => "X", :x => 1, :y => 1 })
+  grid.update_field({ :turn => "X", :x => 0, :y => 0 })
 end
 
 def three_in_row_diagonal_right
-    grid.update_field({ :turn => "X", :x => 2, :y => 0 })
-    grid.update_field({ :turn => "X", :x => 1, :y => 1 })
-    grid.update_field({ :turn => "X", :x => 0, :y => 2 })
+  grid.update_field({ :turn => "X", :x => 2, :y => 0 })
+  grid.update_field({ :turn => "X", :x => 1, :y => 1 })
+  grid.update_field({ :turn => "X", :x => 0, :y => 2 })
 end

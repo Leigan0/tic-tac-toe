@@ -73,19 +73,19 @@ describe Grid do
   describe '#repeating_pattern' do
     let(:grid) { described_class.new(3, 3) }
     context 'repeating horizontal pattern' do
-      it 'can confirm true if repeating pattern in first row horizontal' do
+      it 'returns  true if repeating pattern in first row horizontal' do
         three_in_row_horizontal(0)
         expect(grid.repeating_pattern).to eq true
       end
-      it 'can confirm true if repeating pattern in second row horizontal' do
+      it 'returns  true if repeating pattern in second row horizontal' do
         three_in_row_horizontal(1)
         expect(grid.repeating_pattern).to eq true
       end
-      it 'can confirm true if repeating pattern in second row horizontal' do
+      it 'returns true if repeating pattern in second row horizontal' do
         three_in_row_horizontal(1)
         expect(grid.repeating_pattern).to eq true
       end
-      it 'can confirm true if repeating pattern if multiple other fields in grid' do
+      it 'returns true if repeating pattern if multiple other fields in grid' do
         three_in_row_horizontal(0)
         grid.update_field({ :turn => "O", :x => 2, :y => 1 })
         grid.update_field({ :turn => "O", :x => 2, :y => 2 })
@@ -93,19 +93,19 @@ describe Grid do
       end
     end
     context 'repeating vertical pattern' do
-      it 'can confirm true if repeating pattern in first row vertical' do
+      it 'returns true if repeating pattern in first row vertical' do
         three_in_row_vertical(0)
         expect(grid.repeating_pattern).to eq true
       end
-      it 'can confirm true if repeating pattern in second row vertical' do
+      it 'returns true if repeating pattern in second row vertical' do
         three_in_row_vertical(1)
         expect(grid.repeating_pattern).to eq true
       end
-      it 'can confirm true if repeating pattern in second row vertical' do
+      it 'returns true if repeating pattern in second row vertical' do
         three_in_row_vertical(2)
         expect(grid.repeating_pattern).to eq true
       end
-      it 'can confirm true if repeating pattern if multiple other fields in grid' do
+      it 'returns true if repeating pattern if multiple other fields in grid' do
         three_in_row_vertical(0)
         grid.update_field({ :turn => "O", :x => 2, :y => 1 })
         grid.update_field({ :turn => "O", :x => 2, :y => 2 })
@@ -113,21 +113,21 @@ describe Grid do
       end
     end
 
-  context 'diagonal pattern' do
-    it 'can confirm true if repeating pattern in left diagnonal row' do
-      three_in_row_diagonal_left
-      expect(grid.repeating_pattern).to eq true
-    end
-    it 'can confirm true if repeating pattern in right diagnonal row' do
-      three_in_row_diagonal_right
-      expect(grid.repeating_pattern).to eq true
-    end
-    it 'can confirm true if repeating pattern if multiple other fields in grid' do
-      three_in_row_diagonal_right
-      grid.update_field({ :turn => "O", :x => 2, :y => 1 })
-      grid.update_field({ :turn => "O", :x => 2, :y => 2 })
-      expect(grid.repeating_pattern).to eq true
+    context 'diagonal pattern' do
+      it 'returns true if repeating pattern in left diagnonal row' do
+        three_in_row_diagonal_left
+        expect(grid.repeating_pattern).to eq true
+      end
+      it 'returns true if repeating pattern in right diagnonal row' do
+        three_in_row_diagonal_right
+        expect(grid.repeating_pattern).to eq true
+      end
+      it 'returns true if repeating pattern if multiple other fields in grid' do
+        three_in_row_diagonal_right
+        grid.update_field({ :turn => "O", :x => 2, :y => 1 })
+        grid.update_field({ :turn => "O", :x => 2, :y => 2 })
+        expect(grid.repeating_pattern).to eq true
+      end
     end
   end
-end
 end

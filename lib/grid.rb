@@ -12,7 +12,7 @@ class Grid
   def update_field(coordinates)
     @coordinates = coordinates
     validate_field
-    @grid[coordinates[:y]][coordinates[:x]] = coordinates[:turn]
+    grid[coordinates[:y]][coordinates[:x]] = coordinates[:turn]
   end
 
   def full?
@@ -30,12 +30,12 @@ class Grid
   attr_reader :length
 
   def diagonal_left
-    repeating_patterns([(0..(length-1)).collect { |ind| grid[ind][ind] }])
+    repeating_patterns([(0..(length - 1)).collect { |ind| grid[ind][ind] }])
   end
 
   def diagnonal_right
     i = length
-    repeating_patterns([grid.map { |row| row[i-=1] }])
+    repeating_patterns([grid.map { |row| row[i -= 1] }])
   end
 
   def repeating_patterns(rows)

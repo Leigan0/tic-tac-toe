@@ -17,26 +17,23 @@ class Game
 
   def add_move(x, y)
     @move = @move_class.new(x, y, current_turn)
-    @grid.update_field(@move.to_h)
+    grid.update_field(@move.to_h)
     update_turn
   end
 
-  def current_turn
-    @turn
-  end
-
   def gameover?
-    @grid.repeating_pattern || @grid.full?
+    grid.repeating_pattern || grid.full?
   end
-
-  ## should turn be its own class?
-  ## rules be its own class?
 
   private
 
+  def current_turn
+    turn
+  end
+
   def update_turn
     fail 'Game over' if gameover?
-    @turn == 'X' ? @turn = 'O' : @turn = 'X'
+    turn == 'X' ? @turn = 'O' : @turn = 'X'
   end
 
 end
